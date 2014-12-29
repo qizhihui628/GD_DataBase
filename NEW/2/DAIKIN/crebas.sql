@@ -1,99 +1,40 @@
-drop table Air_Module1;
+drop table Power_Day_Record;
 
-drop table Air_Module2;
+drop table Power_RT_Record;
 
-drop table Air_Module3;
+drop table Power_Status;
 
-drop table Air_Module4;
-
-drop table Air_Module5;
-
-drop table Air_Module6;
-
-drop table Air_Module7;
-
-drop table Air_Module8;
-
-drop table Air_Module_Register;
-
-create table Air_Module1 (
+create table Power_Day_Record (
 ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
+Energy_L1            FLOAT,
+Energy_L2            FLOAT,
+Energy_L3            FLOAT,
+TimeStamp            TIMESTAMP,
 primary key (ID)
 );
 
-create table Air_Module2 (
+create table Power_RT_Record (
 ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
+Voltage_L1           FLOAT,
+Current_L1           FLOAT,
+Power_L1             FLOAT,
+Energy_L1            FLOAT,
+Voltage_L2           FLOAT,
+Current_L2           FLOAT,
+Power_L2             FLOAT,
+Energy_L2            FLOAT,
+Voltage_L3           FLOAT,
+Current_L3           FLOAT,
+Power_L3             FLOAT,
+Energy_L3            FLOAT,
+TimeStamp            TIMESTAMP,
 primary key (ID)
 );
 
-create table Air_Module3 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module4 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module5 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module6 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module7 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module8 (
-ID                   INTEGER                        not null,
-Channel_ID           INTEGER,
-Read_Table           LONG VARBINARY,
-Write_Table          LONG VARBINARY,
-Status               LONG VARBINARY,
-primary key (ID)
-);
-
-create table Air_Module_Register (
+create table Power_Status (
 ID                   INTEGER                        not null,
 Address              INTEGER,
-Table_Name           LONG VARBINARY,
-Module_Type          LONG VARBINARY,
-Status               LONG VARBINARY,
+Running_State        LONG VARBINARY,
 primary key (ID)
 );
 
